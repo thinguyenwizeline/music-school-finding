@@ -27,22 +27,22 @@ class MainActivity : AppCompatActivity() {
         editTextUserName = findViewById<View>(R.id.edEmail) as EditText
         editTextPassword = findViewById<View>(R.id.edPassword) as EditText
 
-        loginButton!!.setOnClickListener { openMainMenuPage() }
+        loginButton?.setOnClickListener { openMainMenuPage() }
     }
 
     fun openMainMenuPage() {
         var checkValidation = false;
-        userName = editTextUserName!!.text.toString();
-        password = editTextPassword!!.text.toString();
+        userName = editTextUserName?.text.toString();
+        password = editTextPassword?.text.toString();
 
         checkValidation = checkUserNamePassword(userName.toString(),password.toString());
 
         if(checkValidation == true){
-            val mainMenuIntent = Intent(this, MenuPageActivity::class.java)
+            val mainMenuIntent = Intent(this, HomePageActivity::class.java)
             startActivity(mainMenuIntent)
         }
         else{
-            Toast.makeText(getApplicationContext(),"User Name or Password incorrect",Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(),R.string.validation_login,Toast.LENGTH_SHORT).show();
         }
 
     }

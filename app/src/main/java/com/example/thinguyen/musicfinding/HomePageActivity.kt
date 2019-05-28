@@ -10,26 +10,26 @@ import android.widget.TextView
  */
 
 
-class MenuPageActivity : AppCompatActivity() {
+class HomePageActivity : AppCompatActivity() {
 
     private var mTextMessage: TextView? = null
 
     private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         when (item.itemId) {
             R.id.navigation_home -> {
-                mTextMessage!!.setText(R.string.title_home)
+                mTextMessage?.setText(R.string.title_home)
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_dashboard -> {
-                mTextMessage!!.setText(R.string.title_dashboard)
+                mTextMessage?.setText(R.string.title_dashboard)
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_place -> {
-                mTextMessage!!.setText(R.string.title_place)
+                mTextMessage?.setText(R.string.title_place)
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_notifications -> {
-                mTextMessage!!.setText(R.string.title_notifications)
+                mTextMessage?.setText(R.string.title_notifications)
                 return@OnNavigationItemSelectedListener true
             }
         }
@@ -38,7 +38,7 @@ class MenuPageActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_menu_page)
+        setContentView(R.layout.activity_home_page)
 
         mTextMessage = findViewById<TextView>(R.id.message)
         val navigation = findViewById<TextView>(R.id.navigation) as BottomNavigationView
